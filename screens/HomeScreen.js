@@ -88,6 +88,7 @@ export default function HomeScreen() {
   const [timer, setTimer] = useState(10)
 
   const createTimeout = () => {
+    if (!gameOn) return;
     timeout = setTimeout(() => {
       const newTimer = timer - 1
       setTimer(newTimer)
@@ -98,10 +99,10 @@ export default function HomeScreen() {
     if (scoredWords.length === 0) {
       const newLives = lives - 1;
       setLives(newLives)
-      if (newLives === 0) {
-        alert('game over man, game over')
+      if (newLives <= 0) {
         setGameOn(false)
         clearTimeout(timeout)
+        alert('game over man, game over')
       }
     }
     clearTimeout(timeout);
@@ -143,8 +144,9 @@ export default function HomeScreen() {
         const newLives = lives - 1;
         setLives(newLives)
         if(newLives === 0) {
-          alert('game over man, game over')
           setGameOn(false)
+          clearTimeout(timeout)
+          alert('game over man, game over')
         } else {
           alert('lost a life!')
         }
