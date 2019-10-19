@@ -1,5 +1,5 @@
 import * as WebBrowser from 'expo-web-browser';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   Image,
   Platform,
@@ -15,7 +15,7 @@ import {ay, aw, ee, ai, oh, ow, oo, oy, see, ibe, ib, obe, ob, ub, ade, ad, eed,
 
 const wordLists = [ay, aw, ee, ai, oh, ow, oo, oy, see, ibe, ib, obe, ob, ub, ade, ad, eed, ed, ide, id, ode, odd, ude, ud, ood, aud, oid, oud, and, end]
 
-const rawWords = []
+let rawWords = []
 
 function shuffle(array) {
   var m = array.length, t, i;
@@ -45,7 +45,7 @@ function trackCounts(total, array) {
     array.push(total)
     return array
   }
-  let slice = getRandomInt(total / 2);
+  let slice = getRandomInt(Math.floor(total / 2));
   let currentTotal = total;
   let numsArray = array || []
   currentTotal -= slice
@@ -53,14 +53,16 @@ function trackCounts(total, array) {
   return trackCounts(currentTotal, numsArray)
 }
 
-const trackCount = trackCounts(26)
 
 const createRhymingObjects = (wordLists) => {
+  // const trackCount = trackCounts(24)
   const shuffledLists = shuffle(wordLists)
   const limitedLists = shuffledLists.slice(0, 6);
+
+  const numbers = shuffle([1,2,3,5,8,5])
   
   limitedLists.forEach((list, listIndex) => {
-    for (let i = 0; i < trackCount[listIndex] + 1; i++) {
+    for (let i = 0; i < numbers[listIndex]; i++) {
       const rhymeObj = {
         text: list[i] ? list[i] : urn[i],
         listIndex: listIndex
@@ -71,7 +73,9 @@ const createRhymingObjects = (wordLists) => {
 }
 
 createRhymingObjects(wordLists)
-let gameWords = shuffle(rawWords).slice(0,24);
+let gameWords = shuffle(rawWords).slice(0, 24)
+
+let timeout
 
 export default function HomeScreen() {
   const [selectedWord, setSelectedWord] = useState('')
@@ -81,7 +85,37 @@ export default function HomeScreen() {
   const [lives, setLives] = useState(3)
   const [scoredWords, setScoredWords] = useState([])
   const [gameOn, setGameOn] = useState(true)
+  const [timer, setTimer] = useState(10)
 
+  const createTimeout = () => {
+    timeout = setTimeout(() => {
+      const newTimer = timer - 1
+      setTimer(newTimer)
+    }, 1000)
+  }
+  
+  if (timer === 0) {
+    if (scoredWords.length === 0) {
+      const newLives = lives - 1;
+      setLives(newLives)
+      if (newLives === 0) {
+        alert('game over man, game over')
+        setGameOn(false)
+        clearTimeout(timeout)
+      }
+    }
+    clearTimeout(timeout);
+    rawWords = [];
+    createRhymingObjects(wordLists)
+    gameWords = shuffle(rawWords)
+    setSelectedWord('')
+    setSelectedListIndex(undefined)
+    setSelectedWordIndex(undefined)
+    setScoredWords([])
+    setTimer(10)
+  } else {
+    createTimeout();
+  }
   const makeSelection = (word, index) => {
     if (!gameOn) return;
     if (selectedWord) {
@@ -92,7 +126,8 @@ export default function HomeScreen() {
         return
       }
       if (word.listIndex === selectedListIndex) {
-        const newScore = score + 1;
+        const multiplier = scoredWords.length + 1
+        const newScore = score + (1) * multiplier;
         setScore(newScore)
         const copiedWords = scoredWords.slice();
         copiedWords.push(selectedWordIndex, index);
@@ -102,7 +137,6 @@ export default function HomeScreen() {
         setSelectedWordIndex(undefined)
       } else {
         // fail
-        alert('lost a life!')
         setSelectedWord('')
         setSelectedListIndex(undefined)
         setSelectedWordIndex(undefined)
@@ -111,6 +145,8 @@ export default function HomeScreen() {
         if(newLives === 0) {
           alert('game over man, game over')
           setGameOn(false)
+        } else {
+          alert('lost a life!')
         }
       }
     } else {
@@ -128,7 +164,11 @@ export default function HomeScreen() {
         </View>
         <View style={styles.squares}>
           {gameWords.map((word, index) => {
-            if (!word.text) return;
+            if (!word.text) {
+              return(
+                <Text key={word.text} onPress={() => makeSelection(word, index)} style={selectedWord === urn[index].text ? styles.selectedSquare : styles.square}>{urn[index].text}</Text>
+              )
+            }
             if (scoredWords.includes(index)) {
               return(
                 <Text key={word.text} style={styles.scoredSquare}>{word.text}</Text>
@@ -141,7 +181,7 @@ export default function HomeScreen() {
         </View>
         <View style={styles.getStartedContainer}>
           <Text style={styles.getStartedText}>Score: {score}</Text>
-          <Text style={styles.getStartedText}>Lives: {lives}</Text>
+          <Text style={styles.getStartedText}>Lives: {lives} Timer: {timer}</Text>
           <DevelopmentModeNotice />
 
           <Text style={styles.getStartedText}>Get started by opening</Text>
