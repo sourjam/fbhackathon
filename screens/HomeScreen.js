@@ -81,6 +81,7 @@ export default function HomeScreen() {
   const [selectedListIndex, setSelectedListIndex] = useState()
   const [selectedWordIndex, setSelectedWordIndex] = useState()
   const [score, setScore] = useState(0)
+  const [scoredWords, setScoredWords] = useState([])
 
 
   const makeSelection = (word, index) => {
@@ -92,9 +93,14 @@ export default function HomeScreen() {
         return
       }
       if (word.listIndex === selectedListIndex) {
-        alert('score')
         const newScore = score + 1;
         setScore(newScore)
+        const copiedWords = scoredWords.slice();
+        copiedWords.push(selectedWordIndex, index);
+        setScoredWords(copiedWords)
+        setSelectedWord('')
+        setSelectedListIndex(undefined)
+        setSelectedWordIndex(undefined)
       }
     } else {
       setSelectedWord(word.text)
@@ -112,12 +118,18 @@ export default function HomeScreen() {
         <View style={styles.squares}>
           {gameWords.map((word, index) => {
             if (!word.text) return;
+            if (scoredWords.includes(index)) {
+              return(
+                <Text key={word.text} style={styles.scoredSquare}>{word.text}</Text>
+              )              
+            }
             return(
               <Text key={word.text} onPress={() => makeSelection(word, index)} style={selectedWord === word.text ? styles.selectedSquare : styles.square}>{word.text}</Text>
             )
           })}
         </View>
         <View style={styles.getStartedContainer}>
+          <Text style={styles.getStartedText}>Score: {score}</Text>
           <DevelopmentModeNotice />
 
           <Text style={styles.getStartedText}>Get started by opening</Text>
@@ -218,6 +230,15 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderColor: 'black',
     backgroundColor: 'lightgrey'
+  },
+  scoredSquare: {
+    width: 100,
+    height: 100,
+    textAlign: 'center',
+    borderWidth: .5,
+    borderRadius: 5,
+    borderColor: 'black',
+    backgroundColor: 'palegreen'
   },
   container: {
     flex: 1,
