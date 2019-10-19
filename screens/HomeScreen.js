@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
-import {ay, aw, ee, ai, oh, ow, oo, oy, see, ibe, ib, obe, ob, ub, ade, ad, eed, ed, ide, id, ode, odd, ude, ud, ood, aud, oid, oud, and, end} from '../rhymes';
+import {ay, aw, ee, ai, oh, ow, oo, oy, see, ibe, ib, obe, ob, ub, ade, ad, eed, ed, ide, id, ode, odd, ude, ud, ood, aud, oid, oud, and, end, urn} from '../rhymes';
 
 const wordLists = [ay, aw, ee, ai, oh, ow, oo, oy, see, ibe, ib, obe, ob, ub, ade, ad, eed, ed, ide, id, ode, odd, ude, ud, ood, aud, oid, oud, and, end]
 
@@ -62,11 +62,8 @@ const createRhymingObjects = (wordLists) => {
   limitedLists.forEach((list, listIndex) => {
     for (let i = 0; i < trackCount[listIndex] + 1; i++) {
       const rhymeObj = {
-        text: list[i] ? list[i] : 'durn',
+        text: list[i] ? list[i] : urn[i],
         listIndex: listIndex
-      }
-      if (!list[i]) {
-        // alert('bad: ' + i + ':' + listIndex)
       }
       rawWords.push(rhymeObj)
     }
@@ -81,10 +78,12 @@ export default function HomeScreen() {
   const [selectedListIndex, setSelectedListIndex] = useState()
   const [selectedWordIndex, setSelectedWordIndex] = useState()
   const [score, setScore] = useState(0)
+  const [lives, setLives] = useState(3)
   const [scoredWords, setScoredWords] = useState([])
-
+  const [gameOn, setGameOn] = useState(true)
 
   const makeSelection = (word, index) => {
+    if (!gameOn) return;
     if (selectedWord) {
       if (word.text === selectedWord) {
         setSelectedWord('')
@@ -101,6 +100,18 @@ export default function HomeScreen() {
         setSelectedWord('')
         setSelectedListIndex(undefined)
         setSelectedWordIndex(undefined)
+      } else {
+        // fail
+        alert('lost a life!')
+        setSelectedWord('')
+        setSelectedListIndex(undefined)
+        setSelectedWordIndex(undefined)
+        const newLives = lives - 1;
+        setLives(newLives)
+        if(newLives === 0) {
+          alert('game over man, game over')
+          setGameOn(false)
+        }
       }
     } else {
       setSelectedWord(word.text)
@@ -130,6 +141,7 @@ export default function HomeScreen() {
         </View>
         <View style={styles.getStartedContainer}>
           <Text style={styles.getStartedText}>Score: {score}</Text>
+          <Text style={styles.getStartedText}>Lives: {lives}</Text>
           <DevelopmentModeNotice />
 
           <Text style={styles.getStartedText}>Get started by opening</Text>

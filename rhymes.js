@@ -933,9 +933,9 @@ export const end = ['end', 'bend', 'mend', 'blend', 'fend', 'lend', 'rend', 'sen
 
 // '231' 
 
-// 'Burn', 'churn', 'spurn', 'turn', 'urn', 'return', 'overturn', 
-// 'tern', 'discern', 'earn', 'sojourn', 'adjourn', 'rejourn', 'fern', 
-// 'stern', 'hern', 'concern', 'learn', 'yearn', 'quern', 'dern', 'cterne'. 
+export const urn = ['Burn', 'churn', 'spurn', 'turn', 'urn', 'return', 'overturn', 
+'tern', 'discern', 'earn', 'sojourn', 'adjourn', 'rejourn', 'fern', 
+'stern', 'hern', 'concern', 'learn', 'yearn', 'quern', 'dern', 'cterne']
 
 
 
