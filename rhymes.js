@@ -1,18 +1,16 @@
 
 export const ay = ['bray', 'clay', 'day', 'dray', 'tray', 'flay', 'fray', 'gay', 'hay', 'jay', 'lay', 'may', 'nay', 'pay', 'play', 'ray', 'say', 'way', 'pray', 'spray', 'slay', 'spay', 'stay', 'stray', 'sway', 'affray', 'allay', 'array', 
 'astray', 'away', 'belay', 'bewray', 'betray', 'decay', 'defray', 
-'delay', 'disarray', 'display', 'dismay', 'essay', 'forelay', 'gain'- 
-'say', 'inlay', 'relay', 'repay', 'roundelay', 'virelay', 'neigh', 
-'weigh', 'inveigh', 'prey', 'they', 'convey', 'obey', 'purvey', 'sur'- 
-'vey', 'disobey', 'grey', 'tway', 'fay', 'shay', 'yea', 'gray', 'aye', 
+'delay', 'disarray', 'display', 'dismay', 'essay', 'forelay', 'gain', 'say', 'inlay', 'relay', 'repay', 'roundelay', 'virelay', 'neigh', 
+'weigh', 'inveigh', 'prey', 'they', 'convey', 'obey', 'purvey', 'survey', 'disobey', 'grey', 'tway', 'fay', 'shay', 'yea', 'gray', 'aye', 
 'denay', 'sleigh']
 
 export const aw = ['craw', 'daw', 'law', 'claw', 'draw', 'flaw', 'gnaw', 'jaw', 'law', 
-'maw', 'paw', 'raw', 'scraw', 'shaw', 'saw', 'straw', 'thaw', 'with'- 
+'maw', 'paw', 'raw', 'scraw', 'shaw', 'saw', 'straw', 'thaw', 'with',
 'draw', 'foresaw'] 
 
 export const ee = ['bee', 'free', 'glee', 'knee', 'see', 'three', 'thee', 'tree', 'agree', 
-'decree', 'degree', 'disagree', 'flee', 'foresee', 'oversee', 'pedigree', 'free', 'he', 'me', 'we', 'she', 'be', 'jubilee', 'lee', 'ne', 'sea', 'plea', 'ea', 'tea', 'key', 'cap'-'a'-'pie', 'gree', 'dree', 'calipee', 'the', 'quay', 'lea', 'tee']
+'decree', 'degree', 'disagree', 'flee', 'foresee', 'oversee', 'pedigree', 'free', 'he', 'me', 'we', 'she', 'be', 'jubilee', 'lee', 'ne', 'sea', 'plea', 'ea', 'tea', 'key', 'gree', 'dree', 'calipee', 'the', 'quay', 'lea', 'tee']
 
 export const ai = ['by', 'buy', 'cry', 'die', 'dry', 'eye', 'fly', 'fry', 'fie', 'hie', 'lie', 'pie', 'ply', 'pry', 'rye', 'shy', 'sly', 'spy', 'sky', 'sty', 'tie', 'try', 'vie', 'why', 
 'ally', 'apply', 'awry', 'bely', 'comply', 'decry', 'defy', 'descry', 
@@ -26,8 +24,7 @@ export const ai = ['by', 'buy', 'cry', 'die', 'dry', 'eye', 'fly', 'fry', 'fie',
 
 export const oh = ['calico', 'bo', 'portico', 'go', 'ago', 'undergo', 'row', 'though', 
 'tho', 'woe', 'adagio', 'seraglio', 'owe', 'beau', 'crow', 'lo', 'no', 
-'fro', 'so', 'snow', 'show', 'slow', 'overthrow', 'overflow', 'fore'- 
-'show', 'outgrow', 'dough', 'foreknow', 'forego', 'undergo', 
+'fro', 'so', 'snow', 'show', 'slow', 'overthrow', 'overflow', 'show', 'outgrow', 'dough', 'foreknow', 'forego', 'undergo', 
 'below', 'bestow', 'hoe', 'ho', 'ago', 'strow', 'slow', 'mistletoe', 
 'sloe', 'toe', 'foe', 'doe', 'roe', 'oh', 'stow', 'bow', 'flow', 'glow', 
 'grow', 'know', 'low', 'mow', 'sew', 'plateau', 'throw', 'tow', 
@@ -40,26 +37,21 @@ export const ow = ['bow', 'how', 'mow', 'cow', 'brow', 'sow', 'vow', 'prow', 'av
 export const oo = ['blew', 'chew', 'dew', 'brew', 'flew', 'few', 'grew', 'new', 'coo', 
 'woo', 'shoe', 'too', 'who', 'do', 'blue', 'stew', 'knew', 'hew', 'Jew', 
 'mew', 'view', 'threw', 'yew', 'crew', 'slew', 'anew', 'askew', 
-'bedew', 'eschew', 'renew', 'review', 'withdrew', 'screw', 'inter'- 
-'view', 'emmew', 'clue', 'due', 'cue', 'glue', 'hue', 'rue', 'sue', 'true', 
+'bedew', 'eschew', 'renew', 'review', 'withdrew', 'screw', 'interview', 'emmew', 'clue', 'due', 'cue', 'glue', 'hue', 'rue', 'sue', 'true', 
 'accrue', 'ensue', 'endue', 'imbue', 'imbrue', 'pursue', 'subdue', 
-'adieu', 'purlieu', 'perdue', 'residue', 'ormolu', 'avenue', 'reve'- 
-'nue', 'through', 'pooh', 'retinue', 'you', 'thru', 'shoo', 'slue', 'two',
+'adieu', 'purlieu', 'perdue', 'residue', 'ormolu', 'avenue', 'revenue', 'through', 'pooh', 'retinue', 'you', 'thru', 'shoo', 'slue', 'two',
 'to', 'ewe', 'flue']
 
 export const oy = ['boy', 'buoy', 'coy', 'employ', 'cloy', 'joy', 'toy', 'alloy', 'annoy', 'convoy', 'decoy', 'destroy', 'enjoy']
 
 export const see = ['pleurisy', 'chemistry', 'academy', 'apostacy', 'conspiracy', 
 'confederacy', 'ecstasy', 'democracy', 'embassy', 'fallacy', 
-'legacy',- 'supremacy', 'lunacy', 'privacy', 'piracy', 'malady', 
+'legacy', 'supremacy', 'lunacy', 'privacy', 'piracy', 'malady', 
 'remedy', 'tragedy', 'comedy', 'cosmography', 'geography', 
-'geometry', 'jelegy', 'certainty', 'sovereignty', 'loyalty', 'dis'- 
-'loyalty', 'penalty', 'casualty', 'ribaldry', 'chivalry', 'infamy', 
-'constancy', 'fealty', 'cavalry', 'bigamy', 'polygamy', 'va'- 
-'cancy', 'inconstancy', 'infancy', 'company', 'accompany', 
+'geometry', 'jelegy', 'certainty', 'sovereignty', 'loyalty', 'disloyalty', 'penalty', 'casualty', 'ribaldry', 'chivalry', 'infamy', 
+'constancy', 'fealty', 'cavalry', 'bigamy', 'polygamy', 'vacancy', 'inconstancy', 'infancy', 'company', 'accompany', 
 'litany', 'tyranny', 'villainy', 'anarchy', 'monarchy', 'lethargy', 
-'incendiary', 'infirmary', 'library', 'salary', 'sanctuary', 'vo'- 
-'tary', 'auxiliary', 'contrary', 'diary', 'granary', 'rosemary', 
+'incendiary', 'infirmary', 'library', 'salary', 'sanctuary', 'votary', 'auxiliary', 'contrary', 'diary', 'granary', 'rosemary', 
 'urgency', 'infantry', 'knavery', 'livery', 'recovery', 'robbery', 
 'novelty', 'antipathy', 'apathy', 'sympathy', 'idolatry', 'galaxy', 
 'husbandry', 'cruelty', 'enemy', 'blasphemy', 'prophecy', 
@@ -68,32 +60,21 @@ export const see = ['pleurisy', 'chemistry', 'academy', 'apostacy', 'conspiracy'
 'artery', 'artillery', 'battery', 'beggary', 'bribery', 'bravery', 
 'delivery', 'drudgery', 'flattery', 'gallery', 'imagery', 'lottery', 
 'misery', 'mystery', 'nursery', 'raillery', 'slavery', 'sorcery', 
-'treachery', 'discovery', 'tapestry', 'majesty', 'modesty', 'im'- 
-'modesty', 'honesty', 'dishonesty', 'courtesy', 'heresy', 'poesy', 
+'treachery', 'discovery', 'tapestry', 'majesty', 'modesty', 'immodesty', 'honesty', 'dishonesty', 'courtesy', 'heresy', 'poesy', 
 'poetry', 'secresy', 'leprosy', 'perfidy', 'subsidy', 'drapery', 
 'symmetry', 'drollery', 'prodigy', 'policy', 'mutiny', 'destiny', 
 'scrutiny', 'hypocrisy', 'family', 'ability', 'activity', 'avidity', 
-'assiduity', 'civility', 'community', 'concavity', 'consanguin'- 
-'ity', 'conformity', 'congruity', 'diuturnity', 'facility', 'falsity', 
+'assiduity', 'civility', 'community', 'concavity', 'consanguinity', 'conformity', 'congruity', 'diuturnity', 'facility', 'falsity', 
 'familiarity', 'formality', 'generosity', 'gratuity', 'humidity', 
-'absurdity', 'activity', 'adversity', 'affability', 'affinity', 'agil'- 
-'ity', 'alacrity', 'ambiguity', 'animosity', 'antiquity', 'aus'- 
-'terity', 'authority', 'brevity', 'calamity', 'capacity', 'captivity', 'charity', 'chastity', 'civilty', 'credulity', 'curiosity', 'finery', 
-'declivity', 'deformity', 'duty', 'dexterity', 'dignity', 'dis'- 
-'parity', 'diversity', 'divinity', 'enmity', 'enormity', 'equality', 
+'absurdity', 'activity', 'adversity', 'affability', 'affinity', 'agility', 'alacrity', 'ambiguity', 'animosity', 'antiquity', 'austerity', 'authority', 'brevity', 'calamity', 'capacity', 'captivity', 'charity', 'chastity', 'civilty', 'credulity', 'curiosity', 'finery', 
+'declivity', 'deformity', 'duty', 'dexterity', 'dignity', 'disparity', 'diversity', 'divinity', 'enmity', 'enormity', 'equality', 
 'equanimity', 'equity', 'eternity', 'extremity', 'fatality','fidelity', 'frugahty', 'futurity', 'gravity', 'hostility', 'humanity', 'humility', 'immanity', 'maturity', 'immensity', 'immorality', 'immortality', 'immunity', 
 'immutability', 'impartiality', 'impossibility', 'impetuosity', 
 'improbity', 'inanity', 'incapacity', 'incivility', 'incongruity', 
 'inequality', 'indemnity', 'infinity', 'inflexibility', 'instability', 
-'invalidity', 'jollity', 'lenity', 'lubricity', 'magnanimity', 'ma'- 
-'jority', 'mediocrity', 'minority', 'mutability', 'nicety', 'per'- 
-'versity', 'perplexity', 'perspicuity', 'prosperity', 'privity', 
-'probability', 'probity', 'propensity', 'rarity', 'rapidity', 'sa'- 
-'gacity', 'sanctity', 'sensibility', 'sensuality', 'solidity', 'temer'- 
-'ity', 'timidity', 'tranquillity', 'virginity', 'visibility', 'univer'- 
-'sity', 'trumpery', 'apology', 'genealogy', 'etymology', 'simony', 
-'symphony', 'soliloquy', 'allegory', 'armory', 'factory', 'pil'- 
-'lory', 'faculty', 'treasury', 'usury', 'augury', 'importunity', 
+'invalidity', 'jollity', 'lenity', 'lubricity', 'magnanimity', 'majority', 'mediocrity', 'minority', 'mutability', 'nicety', 'perversity', 'perplexity', 'perspicuity', 'prosperity', 'privity', 
+'probability', 'probity', 'propensity', 'rarity', 'rapidity', 'sagacity', 'sanctity', 'sensibility', 'sensuality', 'solidity', 'temerity', 'timidity', 'tranquillity', 'virginity', 'visibility', 'university', 'trumpery', 'apology', 'genealogy', 'etymology', 'simony', 
+'symphony', 'soliloquy', 'allegory', 'armory', 'factory', 'pillory', 'faculty', 'treasury', 'usury', 'augury', 'importunity', 
 'impunity', 'impurity', 'inaccuracy', 'inability', 'incredulity', 
 'indignity', 'infidelity', 'infirmity', 'iniquity', 'integrity', 'laity', 
 'liberality', 'malignity', 'maturity', 'morality']
@@ -118,8 +99,7 @@ export const ub = ['cub', 'club', 'dub', 'chub', 'drub', 'grub', 'hub', 'rub', '
 export const ade = ['cade', 'fade', 'made', 'jade', 'lade', 'wade', 'blade', 'glade', 
 'shade', 'spade', 'trade', 'degrade', 'evade', 'dissuade', 'invade', 
 'persuade', 'blockade', 'brigade', 'esplanade', 'cavalcade', 
-'masquerade', 'renegade', 'retrograde', 'serenade', 'ambus'- 
-'cade', 'cannonade', 'palisade', 'aid', 'maid', 'braid', 'afraid', 
+'masquerade', 'renegade', 'retrograde', 'serenade', 'ambuscade', 'cannonade', 'palisade', 'aid', 'maid', 'braid', 'afraid', 
 'raid', 'upbraid', 'bade', 'estrade', 'arcade', 'cascade', 'cockade', 
 'crusade', 'gambade', 'brocade', 'rhodomontade', 'lemonade']
 
@@ -128,8 +108,7 @@ export const ad = ['add', 'bad', 'dad', 'gad', 'had', 'lad', 'mad', 'pad', 'sad'
 
 export const eed = ['creed', 'deed', 'indeed', 'bleed', 'breed', 'feed', 'heed', 'meed', 
 'need', 'reed', 'speed', 'seed', 'steed', 'weed', 'proceed', 'succeed', 
-'exceed', 'knead', 'read', 'intercede', 'precede', 'recede', 'con'- 
-'cede', 'impede', 'supersede', 'bead', 'lead', 'mead', 'plead', 
+'exceed', 'knead', 'read', 'intercede', 'precede', 'recede', 'concede', 'impede', 'supersede', 'bead', 'lead', 'mead', 'plead', 
 'glede', 'rede', 'cede']
 
 export const ed = ['bed', 'bled', 'fed', 'fled', 'bred', 'Ted', 'red', 'shed', 'shred', 
@@ -139,8 +118,7 @@ export const ed = ['bed', 'bled', 'fed', 'fled', 'bred', 'Ted', 'red', 'shed', '
 
 export const ide = ['bide', 'chide', 'hide', 'gride', 'glide', 'nide', 'pied', 'pride', 'ride', 'slide', 'sighed', 'side', 'wide', 'stride', 'tide', 'bride', 
 'abide', 'guide', 'aside', 'astride', 'beside', 'bestride', 'betide', 
-'confide', 'decide', 'deride', 'divide', 'preside', 'provide', 'sub'- 
-'side', 'misguide', 'subdivide']
+'confide', 'decide', 'deride', 'divide', 'preside', 'provide', 'subside', 'misguide', 'subdivide']
 
 export const id = ['bid', 'chid', 'did', 'hid', 'kid', 'lid', 'slid', 'rid', 'bestrid', 'pyramid', 'forbid', 'quid', 'squid', 'katydid']
 
@@ -172,17 +150,14 @@ export const oid = ['void', 'avoid', 'devoid', 'asteroid', 'alkaloid', 'varioloi
 export const oud = ['shroud', 'cloud', 'loud', 'proud', 'aloud', 'crowd']
 
 export const and = ['and', 'band', 'hand', 'land', 'rand', 'sand', 'brand', 'bland', 
-'grand', 'gland', 'stand', 'strand', 'command', 'demand', 'coun'- 
-'termand', 'disband', 'expand', 'withstand', 'understand', 
+'grand', 'gland', 'stand', 'strand', 'command', 'demand', 'countermand', 'disband', 'expand', 'withstand', 'understand', 
 'reprimand', 'contraband']
 
 export const end = ['end', 'bend', 'mend', 'blend', 'fend', 'lend', 'rend', 'send', 
 'spend', 'tend', 'vend', 'amend', 'attend', 'ascend', 'commend', 
 'contend', 'defend', 'depend', 'descend', 'distend', 'expend', 
 'extend', 'forefend', 'impend', 'misspend', 'obtend', 'offend', 
-'portend', 'pretend', 'protend', 'suspend', 'transcend', 'un'- 
-'bend', 'apprehend', 'comprehend', 'condescend', 'discom'- 
-'mend', 'recommend', 'reprehend', 'dividend', 'reverend', 
+'portend', 'pretend', 'protend', 'suspend', 'transcend', 'unbend', 'apprehend', 'comprehend', 'condescend', 'discommend', 'recommend', 'reprehend', 'dividend', 'reverend', 
 'friend', 'befriend', 'penned', 'kenned']
 
 

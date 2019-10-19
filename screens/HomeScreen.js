@@ -1,5 +1,5 @@
 import * as WebBrowser from 'expo-web-browser';
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Image,
   Platform,
@@ -15,25 +15,92 @@ import {ay, aw, ee, ai, oh, ow, oo, oy, see, ibe, ib, obe, ob, ub, ade, ad, eed,
 
 const wordLists = [ay, aw, ee, ai, oh, ow, oo, oy, see, ibe, ib, obe, ob, ub, ade, ad, eed, ed, ide, id, ode, odd, ude, ud, ood, aud, oid, oud, and, end]
 
-const gameWords = []
+const rawWords = []
+
+function shuffle(array) {
+  var m = array.length, t, i;
+
+  // While there remain elements to shuffle…
+  while (m) {
+
+    // Pick a remaining element…
+    i = Math.floor(Math.random() * m--);
+
+    // And swap it with the current element.
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+  }
+
+  return array;
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+// passing in 26
+function trackCounts(total, array) {
+  if (total < 10) {
+    array.push(total)
+    return array
+  }
+  let slice = getRandomInt(total / 2);
+  let currentTotal = total;
+  let numsArray = array || []
+  currentTotal -= slice
+  numsArray.push(slice)
+  return trackCounts(currentTotal, numsArray)
+}
+
+const trackCount = trackCounts(26)
 
 const createRhymingObjects = (wordLists) => {
-  wordLists.forEach((list, listIndex) => {
-    list.forEach((word) => {
+  const shuffledLists = shuffle(wordLists)
+  const limitedLists = shuffledLists.slice(0, 6);
+  
+  limitedLists.forEach((list, listIndex) => {
+    for (let i = 0; i < trackCount[listIndex] + 1; i++) {
       const rhymeObj = {
-        text: word,
+        text: list[i] ? list[i] : 'durn',
         listIndex: listIndex
       }
-      gameWords.push(rhymeObj)
-    })
+      if (!list[i]) {
+        // alert('bad: ' + i + ':' + listIndex)
+      }
+      rawWords.push(rhymeObj)
+    }
   })
 }
 
 createRhymingObjects(wordLists)
+let gameWords = shuffle(rawWords).slice(0,24);
 
 export default function HomeScreen() {
-  function notice() {
-    alert(gameWords.length);
+  const [selectedWord, setSelectedWord] = useState('')
+  const [selectedListIndex, setSelectedListIndex] = useState()
+  const [selectedWordIndex, setSelectedWordIndex] = useState()
+  const [score, setScore] = useState(0)
+
+
+  const makeSelection = (word, index) => {
+    if (selectedWord) {
+      if (word.text === selectedWord) {
+        setSelectedWord('')
+        setSelectedListIndex(undefined)
+        setSelectedWordIndex(undefined)
+        return
+      }
+      if (word.listIndex === selectedListIndex) {
+        alert('score')
+        const newScore = score + 1;
+        setScore(newScore)
+      }
+    } else {
+      setSelectedWord(word.text)
+      setSelectedListIndex(word.listIndex)
+      setSelectedWordIndex(index)
+    }
   }
   return (
     <View style={styles.container}>
@@ -41,19 +108,12 @@ export default function HomeScreen() {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}>
         <View style={styles.welcomeContainer}>
-          <Image
-            source={
-              __DEV__
-                ? require('../assets/images/robot-dev.png')
-                : require('../assets/images/robot-prod.png')
-            }
-            style={styles.welcomeImage}
-          />
         </View>
         <View style={styles.squares}>
-          {gameWords.map((word) => {
+          {gameWords.map((word, index) => {
+            if (!word.text) return;
             return(
-              <Text key={word.text} onPress={notice} style={styles.square}>{word.text}</Text>
+              <Text key={word.text} onPress={() => makeSelection(word, index)} style={selectedWord === word.text ? styles.selectedSquare : styles.square}>{word.text}</Text>
             )
           })}
         </View>
@@ -145,8 +205,19 @@ const styles = StyleSheet.create({
   square: {
     width: 100,
     height: 100,
-    backgroundColor: 'green',
-    textAlign: 'center'
+    textAlign: 'center',
+    borderWidth: .5,
+    borderRadius: 5,
+    borderColor: 'black'
+  },
+  selectedSquare: {
+    width: 100,
+    height: 100,
+    textAlign: 'center',
+    borderWidth: .5,
+    borderRadius: 5,
+    borderColor: 'black',
+    backgroundColor: 'lightgrey'
   },
   container: {
     flex: 1,
